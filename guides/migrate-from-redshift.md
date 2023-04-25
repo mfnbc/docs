@@ -141,8 +141,6 @@ In the RedShift query tool, use the following code on each table you want to ext
     CREATE SERVER parquet_s3_srv FOREIGN DATA WRAPPER parquet_s3_fdw OPTIONS (aws_region 'us-east-1');
 
     CREATE USER MAPPING FOR CURRENT_USER SERVER parquet_s3_srv OPTIONS (user '/ACCESSKEY/', password '/SECRETKEY/');
-    Modify the CREATE TABLE statements for the foreign tables (example)
-    CREATE foreign TABLE
     ```
 2) Simplify the data types
     - All INTs and BOOLEAN to `int`. If you wish, you can shorten or lengthen the ints to different sized ints which will affect memory usage. You will need to re-convert the 0-1 boolean ints back to boolean. This can be done during the INSERT.
